@@ -1,0 +1,285 @@
+EESchema Schematic File Version 4
+LIBS:aero-1-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 7
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector_Generic:Conn_01x03 J4
+U 1 1 5DD21577
+P 4700 4600
+F 0 "J4" V 4573 4780 50  0000 L CNN
+F 1 "Conn_01x03" V 4664 4780 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 4700 4600 50  0001 C CNN
+F 3 "~" H 4700 4600 50  0001 C CNN
+	1    4700 4600
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J2
+U 1 1 5DD2163F
+P 4050 4600
+F 0 "J2" V 3923 4680 50  0000 L CNN
+F 1 "Conn_01x02" V 4014 4680 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left" H 4050 4600 50  0001 C CNN
+F 3 "~" H 4050 4600 50  0001 C CNN
+	1    4050 4600
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0107
+U 1 1 5DD21700
+P 3950 2950
+F 0 "#PWR0107" H 3950 2700 50  0001 C CNN
+F 1 "GND" H 3955 2777 50  0000 C CNN
+F 2 "" H 3950 2950 50  0001 C CNN
+F 3 "" H 3950 2950 50  0001 C CNN
+	1    3950 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 4400 3850 4400
+Wire Wire Line
+	3850 4400 3850 4800
+Wire Wire Line
+	4050 4400 4600 4400
+Text Notes 3700 4350 0    50   ~ 0
++3.3 V External\nSupply Input
+Text Notes 4550 5000 0    50   ~ 0
+Input Selector\nPin 1 + 2: USB powered\nPin 2 + 3: Using external supply\n
+$Comp
+L Regulator_Linear:AZ1117-3.3 U2
+U 1 1 5DD21884
+P 5600 1750
+F 0 "U2" H 5600 1992 50  0000 C CNN
+F 1 "AZ1117-3.3" H 5600 1901 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223" H 5600 2000 50  0001 C CIN
+F 3 "https://www.diodes.com/assets/Datasheets/AZ1117.pdf" H 5600 1750 50  0001 C CNN
+	1    5600 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:USB_B_Micro J3
+U 1 1 5DD21963
+P 4150 1950
+F 0 "J3" H 4205 2417 50  0000 C CNN
+F 1 "USB_B_Micro" H 4205 2326 50  0000 C CNN
+F 2 "Connector_USB:USB_Micro-B_Molex-105017-0001" H 4300 1900 50  0001 C CNN
+F 3 "~" H 4300 1900 50  0001 C CNN
+	1    4150 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5300 1750 4450 1750
+$Comp
+L power:GND #PWR0108
+U 1 1 5DD21B23
+P 3850 4800
+F 0 "#PWR0108" H 3850 4550 50  0001 C CNN
+F 1 "GND" H 3855 4627 50  0000 C CNN
+F 2 "" H 3850 4800 50  0001 C CNN
+F 3 "" H 3850 4800 50  0001 C CNN
+	1    3850 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0109
+U 1 1 5DD21BB5
+P 5600 2500
+F 0 "#PWR0109" H 5600 2250 50  0001 C CNN
+F 1 "GND" H 5605 2327 50  0000 C CNN
+F 2 "" H 5600 2500 50  0001 C CNN
+F 3 "" H 5600 2500 50  0001 C CNN
+	1    5600 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5600 2050 5600 2150
+Text GLabel 6100 1750 2    50   Output ~ 0
+3v3_reg
+Wire Wire Line
+	5900 1750 6000 1750
+Text GLabel 5400 4400 2    50   Input ~ 0
+3v3_reg
+Wire Wire Line
+	5400 4400 4800 4400
+$Comp
+L power:+3V3 #PWR0110
+U 1 1 5DD21DA8
+P 4700 4300
+F 0 "#PWR0110" H 4700 4150 50  0001 C CNN
+F 1 "+3V3" H 4715 4473 50  0000 C CNN
+F 2 "" H 4700 4300 50  0001 C CNN
+F 3 "" H 4700 4300 50  0001 C CNN
+	1    4700 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4700 4300 4700 4400
+$Comp
+L Device:C C2
+U 1 1 5DD21E90
+P 6000 2000
+F 0 "C2" H 6115 2046 50  0000 L CNN
+F 1 "1uF" H 6115 1955 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 6038 1850 50  0001 C CNN
+F 3 "~" H 6000 2000 50  0001 C CNN
+	1    6000 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6000 1850 6000 1750
+Connection ~ 6000 1750
+Wire Wire Line
+	6000 1750 6100 1750
+Wire Wire Line
+	6000 2150 5600 2150
+Connection ~ 5600 2150
+Wire Wire Line
+	5600 2150 5600 2500
+$Comp
+L Device:LED D3
+U 1 1 5DD22091
+P 9350 2150
+F 0 "D3" H 9341 2366 50  0000 C CNN
+F 1 "LED" H 9341 2275 50  0000 C CNN
+F 2 "LED_SMD:LED_0603_1608Metric" H 9350 2150 50  0001 C CNN
+F 3 "~" H 9350 2150 50  0001 C CNN
+	1    9350 2150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R6
+U 1 1 5DD22262
+P 9350 2600
+F 0 "R6" H 9420 2646 50  0000 L CNN
+F 1 "270" H 9420 2555 50  0000 L CNN
+F 2 "Capacitor_SMD:C_01005_0402Metric" V 9280 2600 50  0001 C CNN
+F 3 "~" H 9350 2600 50  0001 C CNN
+	1    9350 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5DD222BF
+P 3700 2700
+F 0 "C1" H 3815 2746 50  0000 L CNN
+F 1 "1 uF" H 3815 2655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 3738 2550 50  0001 C CNN
+F 3 "~" H 3700 2700 50  0001 C CNN
+	1    3700 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R5
+U 1 1 5DD22336
+P 3450 2700
+F 0 "R5" H 3520 2746 50  0000 L CNN
+F 1 "1M" H 3520 2655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_01005_0402Metric" V 3380 2700 50  0001 C CNN
+F 3 "~" H 3450 2700 50  0001 C CNN
+	1    3450 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3450 2550 3450 2500
+Wire Wire Line
+	3450 2500 3700 2500
+Wire Wire Line
+	3700 2550 3700 2500
+Connection ~ 3700 2500
+Wire Wire Line
+	3700 2500 4050 2500
+Wire Wire Line
+	3450 2850 3450 2900
+Wire Wire Line
+	3700 2900 3700 2850
+Wire Wire Line
+	3950 2950 3950 2900
+Wire Wire Line
+	4050 2350 4050 2500
+Wire Wire Line
+	3700 2900 3950 2900
+Connection ~ 3700 2900
+Wire Wire Line
+	4150 2350 4150 2900
+Connection ~ 3950 2900
+Wire Wire Line
+	3950 2900 4150 2900
+Wire Wire Line
+	3450 2900 3700 2900
+$Comp
+L Transistor_FET:IRF6655 Q3
+U 1 1 5DD21C0C
+P 9250 3100
+F 0 "Q3" H 9456 3146 50  0000 L CNN
+F 1 "IRF6655" H 9456 3055 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:TSOT-23" H 9250 3100 50  0001 C CIN
+F 3 "https://www.infineon.com/dgdl/irf6655pbf.pdf?fileId=5546d462533600a4015355ec76961a5b" H 9250 3100 50  0001 L CNN
+	1    9250 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0111
+U 1 1 5DD21C97
+P 9350 3400
+F 0 "#PWR0111" H 9350 3150 50  0001 C CNN
+F 1 "GND" H 9355 3227 50  0000 C CNN
+F 2 "" H 9350 3400 50  0001 C CNN
+F 3 "" H 9350 3400 50  0001 C CNN
+	1    9350 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9350 3300 9350 3400
+$Comp
+L power:+3V3 #PWR0112
+U 1 1 5DD21F5C
+P 8850 3100
+F 0 "#PWR0112" H 8850 2950 50  0001 C CNN
+F 1 "+3V3" H 8865 3273 50  0000 C CNN
+F 2 "" H 8850 3100 50  0001 C CNN
+F 3 "" H 8850 3100 50  0001 C CNN
+	1    8850 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9050 3100 8850 3100
+$Comp
+L power:+3V3 #PWR0113
+U 1 1 5DD22A9F
+P 9350 1850
+F 0 "#PWR0113" H 9350 1700 50  0001 C CNN
+F 1 "+3V3" H 9365 2023 50  0000 C CNN
+F 2 "" H 9350 1850 50  0001 C CNN
+F 3 "" H 9350 1850 50  0001 C CNN
+	1    9350 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9350 1850 9350 2000
+Wire Wire Line
+	9350 2300 9350 2450
+Wire Wire Line
+	9350 2750 9350 2900
+Text Notes 9150 1500 0    50   ~ 0
+Power Good\nIndicator
+Text Notes 4600 1450 0    50   ~ 0
+3.3 V Regulator\nFrom USB Power
+Text Notes 3750 3950 0    50   ~ 0
+Power Selection
+Text HLabel 4550 1950 2    50   Input ~ 0
+RX
+Wire Wire Line
+	4450 1950 4550 1950
+$EndSCHEMATC
